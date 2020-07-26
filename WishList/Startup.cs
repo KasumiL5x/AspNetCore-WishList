@@ -15,7 +15,7 @@ namespace WishList {
 public class Startup {
   public void ConfigureServices(IServiceCollection services) {
     services.AddMvc();
-    services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("WishList"));
+    services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("WishList"));
   }
 
   public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
