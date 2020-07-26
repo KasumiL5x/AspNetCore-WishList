@@ -8,12 +8,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WishList.Data;
 
 namespace WishList {
 
 public class Startup {
   public void ConfigureServices(IServiceCollection services) {
     services.AddMvc();
+    services.AddDbContext<ApplicationDbContext>(opt => opt.UseInMemoryDatabase("WishList"));
   }
 
   public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
