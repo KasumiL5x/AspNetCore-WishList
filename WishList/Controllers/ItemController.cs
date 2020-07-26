@@ -9,10 +9,10 @@ public class ItemController : Controller {
   private readonly ApplicationDbContext _context;
 
   public ItemController(ApplicationDbContext context) {
-    // PS complaining again.
     _context = context;
-    // this._context = context;
   }
+  // PS complaining again >_>
+  // this._context = context;
   
   public IActionResult Index() {
     return View("Index", _context.Items.ToList());
